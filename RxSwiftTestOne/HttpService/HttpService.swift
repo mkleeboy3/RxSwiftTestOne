@@ -14,7 +14,7 @@ final class HttpService<T: Decodable> {
     private let scheduler: ConcurrentDispatchQueueScheduler
     
     init() {
-        self.baseUrl = "https://mocki.io/v1/124843d1-a200-44bc-9ecb-37484ce5ba48"
+        self.baseUrl = HttpConstants.baseUrl
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
     }
     

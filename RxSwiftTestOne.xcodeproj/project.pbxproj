@@ -26,6 +26,7 @@
 		3A927C27281F9346001A7B35 /* RestaurantListViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A927C26281F9346001A7B35 /* RestaurantListViewModels.swift */; };
 		3A927C29281F935A001A7B35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A927C28281F935A001A7B35 /* ViewController.swift */; };
 		3A927C2F281FB197001A7B35 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A927C2E281FB197001A7B35 /* HttpService.swift */; };
+		3A927C31281FB824001A7B35 /* HttpConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A927C30281FB824001A7B35 /* HttpConstants.swift */; };
 		9DB6AAFC9A103EF37EA332B2 /* Pods_RxSwiftTestOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8181BCC34EC10DD089CA56 /* Pods_RxSwiftTestOne.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		3A927C26281F9346001A7B35 /* RestaurantListViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModels.swift; sourceTree = "<group>"; };
 		3A927C28281F935A001A7B35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A927C2E281FB197001A7B35 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
+		3A927C30281FB824001A7B35 /* HttpConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpConstants.swift; sourceTree = "<group>"; };
 		6BAAE21D04D6B4559E7E72DA /* Pods-RxSwiftTestOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTestOne.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftTestOne/Pods-RxSwiftTestOne.debug.xcconfig"; sourceTree = "<group>"; };
 		ACE82F3960B3BB04A5426CB1 /* Pods-RxSwiftTestOne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTestOne.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftTestOne/Pods-RxSwiftTestOne.release.xcconfig"; sourceTree = "<group>"; };
 		DD8181BCC34EC10DD089CA56 /* Pods_RxSwiftTestOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftTestOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				3A927C2E281FB197001A7B35 /* HttpService.swift */,
+				3A927C30281FB824001A7B35 /* HttpConstants.swift */,
 			);
 			path = HttpService;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				3A6012CA281A265B00F5101A /* AppRoutes.swift in Sources */,
 				3A6012D2281A71FD00F5101A /* RestaurantListViewController.swift in Sources */,
 				3A1716C1281BC9520053DA89 /* Navigation.swift in Sources */,
+				3A927C31281FB824001A7B35 /* HttpConstants.swift in Sources */,
 				3A927C27281F9346001A7B35 /* RestaurantListViewModels.swift in Sources */,
 				3A927C25281F768A001A7B35 /* RestaurantRepository.swift in Sources */,
 				3A1716BC281BC1CA0053DA89 /* DI.swift in Sources */,
