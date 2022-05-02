@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RestaurantListNavigation: AppNavigation {
+class RestaurantListNavigation: Navigation {
     let appRoute: AppRoute
     let storyboard: UIStoryboard
     let navigationController: UINavigationController
@@ -23,7 +23,7 @@ class RestaurantListNavigation: AppNavigation {
         self.viewController = storyboard.instantiateViewController(
             identifier: appRoute.storyboardID,
             creator: { coder in
-                RestaurantListViewModel(
+                RestaurantListViewController(
                     navigationController: navigationController,
                     coder: coder
                 )
@@ -33,7 +33,6 @@ class RestaurantListNavigation: AppNavigation {
         self.configNavigation()
     }
     
-    func configNavigation() {
-        // Configure things related to navigation
-    }
+    // Configure things related to navigation
+    func configNavigation() {}
 }

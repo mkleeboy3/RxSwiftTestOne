@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        AppCoordinator.shared.configureInitialInterface(window: window)
+        AppNavigator.shared.configureInitialInterface(window: window)
         
         self.window = window
     }

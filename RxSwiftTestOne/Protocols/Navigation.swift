@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AppNavigation {
+protocol Navigation {
     var appRoute: AppRoute { get }
     var storyboard: UIStoryboard { get }
     var navigationController: UINavigationController { get }

@@ -8,7 +8,7 @@
 import UIKit
 
 class AppBindings {
-    static func getAppNavigation(appRoute: AppRoute) -> AppNavigation {
+    static func getAppNavigation(appRoute: AppRoute) -> Navigation {
         switch (appRoute.route) {
             case AppRoutes.restaurantList.route:
                 return ResaurantListBindings()
@@ -18,8 +18,8 @@ class AppBindings {
     }
     
     // Register bindings
-    static private func ResaurantListBindings() -> AppNavigation {
-        let rootNavigationController = AppCoordinator.shared.navigationController
+    static private func ResaurantListBindings() -> Navigation {
+        let rootNavigationController = AppNavigator.shared.navigationController
         return RestaurantListNavigation(
             appRoute: AppRoutes.restaurantList,
             navigationController: rootNavigationController

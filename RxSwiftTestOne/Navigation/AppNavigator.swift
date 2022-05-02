@@ -7,8 +7,8 @@
 
 import UIKit
 
-class AppCoordinator {
-    static let shared = AppCoordinator()
+class AppNavigator {
+    static let shared = AppNavigator()
     
     private let initialAppPath = AppRoutes.restaurantList
     
