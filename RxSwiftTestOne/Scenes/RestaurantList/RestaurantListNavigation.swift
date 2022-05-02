@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RestaurantListNavigation: Navigation {
+final class RestaurantListNavigation: Navigation {
     let appRoute: AppRoute
     let storyboard: UIStoryboard
     let navigationController: UINavigationController

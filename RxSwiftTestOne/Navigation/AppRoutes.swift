@@ -20,7 +20,7 @@ struct AppRoute {
 }
 
 // Mapping of app route to app navigation
-class AppRoutes {
+final class AppRoutes {
     static let restaurantList: AppRoute = AppRoute(
         storyboardName: "RestaurantList",
         storyboardID: "RestaurantListHome",

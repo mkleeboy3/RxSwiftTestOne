@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Restaurant: Decodable {
+final class Restaurant: Decodable {
     let name: String
     let cuisine: Cuisine
 }

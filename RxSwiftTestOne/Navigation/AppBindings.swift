@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppBindings {
+final class AppBindings {
     static func getAppNavigation(appRoute: AppRoute) -> Navigation {
         switch (appRoute.route) {
             case AppRoutes.restaurantList.route:

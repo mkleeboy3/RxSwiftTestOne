@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppNavigator {
+final class AppNavigator {
     static let shared = AppNavigator()
     
     private let initialAppPath = AppRoutes.restaurantList

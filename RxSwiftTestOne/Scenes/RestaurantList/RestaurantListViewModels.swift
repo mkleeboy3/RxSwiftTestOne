@@ -7,7 +7,7 @@
 
 import RxSwift
 
-class RestaurantListViewModel {
+final class RestaurantListViewModel {
     var restaurants: Observable<[RestaurantListTableCellViewModel]>
     
     init() {
@@ -25,7 +25,7 @@ class RestaurantListViewModel {
     }
 }
 
-class RestaurantListTableCellViewModel {
+final class RestaurantListTableCellViewModel {
     var displayText: String
     
     init(restaurantData: Restaurant) {

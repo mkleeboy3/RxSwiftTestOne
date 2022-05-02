@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class RestaurantListViewController: UIViewController, ViewController {
+final class RestaurantListViewController: UIViewController, ViewController {
     var controller: UINavigationController
     var listViewModel: RestaurantListViewModel
     var disposeBag: DisposeBag

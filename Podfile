@@ -7,6 +7,7 @@ target 'RxSwiftTestOne' do
 
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxAlamofire'
   pod 'Swinject'
 
 end
