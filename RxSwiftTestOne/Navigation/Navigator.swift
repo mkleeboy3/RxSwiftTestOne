@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class AppNavigator {
-    static let shared = AppNavigator()
+final class Navigator {
+    static let shared = Navigator()
     
-    private let initialAppPath = AppRoutes.restaurantList
+    private let initialAppPath = Routes.restaurantList
     
     public let navigationController = UINavigationController()
     
@@ -22,22 +22,22 @@ final class AppNavigator {
         window.makeKeyAndVisible()
         
         navigateTo(
-            appPath: AppRoutes.restaurantList,
+            appPath: Routes.restaurantList,
             animated: false
         )
     }
     
-    func navigateTo(appPath: AppRoute, animated: Bool = true) {
-        let navigation = AppBindings.getAppNavigation(appRoute: appPath)
+    func navigateTo(appPath: Route, animated: Bool = true) {
+        let navigation = Bindings.getAppNavigation(appRoute: appPath)
         navigationController.pushViewController(
             navigation.viewController,
             animated: animated
         )
     }
     
-    func pop(To appRoute: AppRoute? = nil, animated: Bool = true) {
+    func pop(To appRoute: Route? = nil, animated: Bool = true) {
         if (appRoute != nil) {
-            let navigation = AppBindings.getAppNavigation(appRoute: appRoute!)
+            let navigation = Bindings.getAppNavigation(appRoute: appRoute!)
             navigationController.popToViewController(
                 navigation.viewController,
                 animated: animated

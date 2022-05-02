@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class AppBindings {
-    static func getAppNavigation(appRoute: AppRoute) -> Navigation {
+final class Bindings {
+    static func getAppNavigation(appRoute: Route) -> Navigation {
         switch (appRoute.route) {
-            case AppRoutes.restaurantList.route:
+            case Routes.restaurantList.route:
                 return ResaurantListBindings()
             default:
                 fatalError()
@@ -19,9 +19,9 @@ final class AppBindings {
     
     // Register bindings
     static private func ResaurantListBindings() -> Navigation {
-        let rootNavigationController = AppNavigator.shared.navigationController
+        let rootNavigationController = Navigator.shared.navigationController
         return RestaurantListNavigation(
-            appRoute: AppRoutes.restaurantList,
+            appRoute: Routes.restaurantList,
             navigationController: rootNavigationController
         )
     }

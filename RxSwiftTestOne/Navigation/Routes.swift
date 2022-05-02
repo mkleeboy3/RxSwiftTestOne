@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct AppRoute {
+struct Route {
     var storyboardName: String // Storyboard file name
     var storyboardID: String // Storyboard ID
     var route: String // App navigation route path
@@ -20,8 +20,8 @@ struct AppRoute {
 }
 
 // Mapping of app route to app navigation
-final class AppRoutes {
-    static let restaurantList: AppRoute = AppRoute(
+final class Routes {
+    static let restaurantList: Route = Route(
         storyboardName: "RestaurantList",
         storyboardID: "RestaurantListHome",
         route: "Main"

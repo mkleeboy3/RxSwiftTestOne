@@ -8,7 +8,7 @@
 import UIKit
 
 protocol Navigation {
-    var appRoute: AppRoute { get }
+    var appRoute: Route { get }
     var storyboard: UIStoryboard { get }
     var navigationController: UINavigationController { get }
     var viewController: UIViewController { get }

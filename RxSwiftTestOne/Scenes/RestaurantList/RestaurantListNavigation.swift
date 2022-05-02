@@ -8,12 +8,12 @@
 import UIKit
 
 final class RestaurantListNavigation: Navigation {
-    let appRoute: AppRoute
+    let appRoute: Route
     let storyboard: UIStoryboard
     let navigationController: UINavigationController
     let viewController: UIViewController
     
-    init(appRoute: AppRoute, navigationController: UINavigationController) {
+    init(appRoute: Route, navigationController: UINavigationController) {
         self.appRoute = appRoute
         self.storyboard = UIStoryboard.init(
             name: appRoute.storyboardName,

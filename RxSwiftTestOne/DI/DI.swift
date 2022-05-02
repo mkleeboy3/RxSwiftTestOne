@@ -5,7 +5,7 @@
 //  Created by Ming on 2022/04/29.
 //
 
-import Foundation
+import Swinject
 
 class Injector {
     
