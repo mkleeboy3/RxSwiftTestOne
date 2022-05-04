@@ -9,16 +9,18 @@ import Foundation
 import RxSwift
 import RxAlamofire
 
-final class HttpService<T: Decodable> {
+final class HttpService {
     private let baseUrl: String
     private let scheduler: ConcurrentDispatchQueueScheduler
     
     init() {
         self.baseUrl = HttpConstants.baseUrl
-        self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
+        self.scheduler = ConcurrentDispatchQueueScheduler(
+            qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1)
+        )
     }
     
-    func get(path: String? = nil) -> Observable<T> {
+    func get<T: Decodable>(path: String? = nil) -> Observable<T> {
         let urlPath = "\(baseUrl)" + ((path != nil) ? "/\(path!)" : "")
         return RxAlamofire.data(.get, urlPath)
             .observe(on: self.scheduler)

@@ -10,25 +10,16 @@ import RxSwift
 import RxCocoa
 
 final class RestaurantListViewController: UIViewController, ViewController {
-    var controller: UINavigationController
     var listViewModel: RestaurantListViewModel
     var disposeBag: DisposeBag
     
     @IBOutlet weak var restaurantListTableView: UITableView!
     
-    init?(
-        navigationController: UINavigationController,
-        coder: NSCoder
-    ) {
-        self.controller = navigationController
+    required init?(coder: NSCoder) {
         self.listViewModel = RestaurantListViewModel()
         self.disposeBag = DisposeBag()
         
         super.init(coder: coder)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError()
     }
     
     override func viewDidLoad() {
@@ -59,10 +50,10 @@ final class RestaurantListViewController: UIViewController, ViewController {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.backgroundColor = .white
-        self.controller.navigationBar.standardAppearance = navBarAppearance
-        self.controller.navigationBar.scrollEdgeAppearance = navBarAppearance
-        self.controller.navigationBar.topItem?.title = "Restaurants"
-        self.controller.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.standardAppearance = navBarAppearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        self.navigationController?.navigationBar.topItem?.title = "Restaurants"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func buildTableView() {

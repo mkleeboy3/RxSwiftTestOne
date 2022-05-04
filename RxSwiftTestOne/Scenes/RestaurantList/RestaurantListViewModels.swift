@@ -8,6 +8,8 @@
 import RxSwift
 
 final class RestaurantListViewModel {
+    @Inject private var restaurantRepository: RestaurantRepository
+    
     var restaurants: Observable<[RestaurantListTableCellViewModel]>
     
     init() {
@@ -17,7 +19,7 @@ final class RestaurantListViewModel {
     }
     
     func getRestaurants() {
-        self.restaurants = RestaurantRepository.getRestaurants().map({ restaurants in
+        self.restaurants = restaurantRepository.getRestaurants().map({ restaurants in
             return restaurants.map { restaurant in
                 return RestaurantListTableCellViewModel(restaurantData: restaurant)
             }

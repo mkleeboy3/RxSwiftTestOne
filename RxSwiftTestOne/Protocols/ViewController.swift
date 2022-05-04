@@ -9,7 +9,6 @@ import UIKit
 import RxSwift
 
 protocol ViewController {
-    var controller: UINavigationController { get }
     var disposeBag: DisposeBag { get }
     func bind()
 }

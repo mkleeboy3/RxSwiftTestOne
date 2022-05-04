@@ -9,5 +9,7 @@ target 'RxSwiftTestOne' do
   pod 'RxCocoa'
   pod 'RxAlamofire'
   pod 'Swinject'
+  pod 'SwinjectAutoregistration'
+  pod 'SwiftLint'
 
 end
