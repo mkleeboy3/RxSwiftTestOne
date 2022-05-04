@@ -9,7 +9,7 @@ import UIKit
 
 class AppCoordinator: BaseCoordinator {
     private let window: UIWindow
-    @Inject var initialCoordinator: RestaurantListCoordinator
+    var initialCoordinator: RestaurantListCoordinator = Injector.find()
     
     init(window: UIWindow) {
         self.window = window

@@ -8,7 +8,7 @@
 import RxSwift
 
 final class RestaurantListViewModel {
-    @Inject private var restaurantRepository: RestaurantRepository
+    private var restaurantRepository: RestaurantRepository = Injector.find()
     
     var restaurants: Observable<[RestaurantListTableCellViewModel]>
     

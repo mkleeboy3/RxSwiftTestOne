@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 final class RestaurantRepository {
-    @Inject private var httpService: HttpService
+    private var httpService: HttpService = Injector.find()
     
     public func getRestaurants() -> Observable<[Restaurant]> {
         let restaurants: Observable<[Restaurant]> = self.httpService.get()
