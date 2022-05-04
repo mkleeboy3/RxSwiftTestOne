@@ -26,4 +26,10 @@ final class Routes {
         storyboardID: "RestaurantListHome",
         route: "Main"
     )
+    
+    static let restaurantDetail: Route = Route(
+        storyboardName: "RestaurantDetail",
+        storyboardID: "RestaurantDetail",
+        route: "Detail"
+    )
 }

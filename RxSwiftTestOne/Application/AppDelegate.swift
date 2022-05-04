@@ -13,7 +13,6 @@ import Swinject
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    static var container: Container = Container()
 
     func application(
         _ application: UIApplication,

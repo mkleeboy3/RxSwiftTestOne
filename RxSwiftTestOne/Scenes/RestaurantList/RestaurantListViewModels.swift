@@ -10,24 +10,20 @@ import RxSwift
 final class RestaurantListViewModel {
     private var restaurantRepository: RestaurantRepository = Injector.find()
     
-    var restaurants: Observable<[RestaurantListTableCellViewModel]>
+    var restaurants: Observable<[Restaurant]>
     
     init() {
-        self.restaurants = Observable<[RestaurantListTableCellViewModel]>.empty()
+        self.restaurants = Observable<[Restaurant]>.empty()
         
         getRestaurants()
     }
     
     func getRestaurants() {
-        self.restaurants = restaurantRepository.getRestaurants().map({ restaurants in
-            return restaurants.map { restaurant in
-                return RestaurantListTableCellViewModel(restaurantData: restaurant)
-            }
-        })
+        self.restaurants = restaurantRepository.getRestaurants()
     }
 }
 
-final class RestaurantListTableCellViewModel {
+struct RestaurantListTableCellViewModel {
     var displayText: String
     
     init(restaurantData: Restaurant) {

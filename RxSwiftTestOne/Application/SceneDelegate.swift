@@ -15,8 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        AppDelegate.container.registerDependencies()
-        
         self.window = UIWindow(windowScene: windowScene)
         
         self.appCoordinator = AppCoordinator(window: self.window!)

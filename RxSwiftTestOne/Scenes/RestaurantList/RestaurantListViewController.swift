@@ -9,18 +9,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class RestaurantListViewController: UIViewController, ViewController {
-    var listViewModel: RestaurantListViewModel
-    var disposeBag: DisposeBag
+final class RestaurantListViewController: UIViewController {
+    let coordinator: RestaurantListCoordinator = Injector.find()
+    let listViewModel: RestaurantListViewModel = Injector.find()
+    var disposeBag: DisposeBag = DisposeBag()
     
     @IBOutlet weak var restaurantListTableView: UITableView!
-    
-    required init?(coder: NSCoder) {
-        self.listViewModel = RestaurantListViewModel()
-        self.disposeBag = DisposeBag()
-        
-        super.init(coder: coder)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +24,31 @@ final class RestaurantListViewController: UIViewController, ViewController {
         self.bind()
     }
     
-    func bind() {
+    private func bind() {
         self.listViewModel.restaurants
             .bind(
                 to: restaurantListTableView.rx.items(cellIdentifier: "restaurantListTableCell")
-            ) { index, viewModel, cell in
+            ) { index, restaurant, cell in
+                let viewModel = RestaurantListTableCellViewModel(restaurantData: restaurant)
+    
                 cell.textLabel?.text = viewModel.displayText
             }.disposed(by: self.disposeBag)
+        
+        self.restaurantListTableView.rx.modelSelected(Restaurant.self)
+            .subscribe(onNext: { [weak self] restaurant in
+                self?.coordinator.navigateToDetail(
+                    args: RestaurantDetailViewArgs(
+                        title: restaurant.name,
+                        body: restaurant.cuisine.rawValue
+                    )
+                )
+            }).disposed(by: disposeBag)
+        
+        self.restaurantListTableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] row in
+                self?.restaurantListTableView.deselectRow(at: row, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     // All UI rendering related functions must have the prefix `build` in front of the method

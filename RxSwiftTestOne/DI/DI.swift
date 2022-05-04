@@ -5,7 +5,6 @@
 //  Created by Ming on 2022/05/04.
 //
 
-import Foundation
 import Swinject
 import SwinjectAutoregistration
 
@@ -38,21 +37,28 @@ extension InjectorImpl {
     // Register coordinators
     private func registerCoordinators() {
         container.autoregister(RestaurantListCoordinator.self) { () in
-            RestaurantListCoordinator.init(route: Routes.restaurantList)
-        }
+            return RestaurantListCoordinator.init(route: Routes.restaurantList)
+        }.inObjectScope(.container)
     }
     
     // Register view models
     private func registerViewModels() {
-        
+        container.autoregister(
+            RestaurantListViewModel.self,
+            initializer: RestaurantListViewModel.init
+        ).inObjectScope(.container)
     }
     
     // Register services
     private func registerServices() {
-        container.autoregister(HttpService.self, initializer: HttpService.init)
+        container
+            .autoregister(HttpService.self, initializer: HttpService.init)
+            .inObjectScope(.container)
     }
     
     private func registerRepositories() {
-        container.autoregister(RestaurantRepository.self, initializer: RestaurantRepository.init)
+        container
+            .autoregister(RestaurantRepository.self, initializer: RestaurantRepository.init)
+            .inObjectScope(.container)
     }
 }
